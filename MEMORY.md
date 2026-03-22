@@ -24,6 +24,65 @@
 - 桌面 `~/Desktop/资产/` 里的 skill 包未受影响
 - OpenClaw CLI 及内置 skills 均完好
 
+## 项目信息：镖人2
+
+- **项目路径：** ~/Desktop/镖人2项目/
+- **资产路径：** ~/Desktop/资产/
+- **有效资产数：** 122 个（已建立索引）
+- **内容：** 历史武侠动画，隋朝背景
+
+## 资产结构
+
+```
+资产/
+├── 人设定稿/          # 角色人设（刀马、杨广、陈国武将等 89 个角色）
+│   ├── 001刀马/       # 含 PNG/JPEG/PSD 多格式，含道具、表情、战马等
+│   ├── 002竖/
+│   ├── 003知世郎/
+│   └── ...（共89个角色目录）
+├── 氛围/              # 场景氛围图（18张）
+│   └── 灭陈水战.jpg、竹林死斗修改.jpg 等
+├── 道具/              # 道具图
+│   └── 十三骁骑尉/    # 十三骁骑卫武器专属
+├── 香盘表/            # Excel 香盘表（镜号+人物+场景配置）
+│   ├── 20250904镖人2-01集香盘表.xlsx
+│   └── 20250928镖人04集香盘表.xlsx
+└── 01分镜/            # PDF 分镜稿
+
+镖人2项目/
+├── assets/            # 已整理的资产副本（供 AI 生成用）
+│   ├── characters/    # 刀马_01集_色稿.jpg、陈国武将_色稿.png 等
+│   ├── scenes/        # 灭陈水战.jpg 等
+│   ├── moods/
+│   └── props/
+├── storyboard/        # 分镜图（shot_040/sketch.png 等）
+├── output/            # 生成结果
+└── shot_configs/      # 镜头配置（待生成）
+```
+
+## 5个 Skills
+
+| Skill | 职责 | 输入 | 输出 |
+|-------|------|------|------|
+| asset-library-manager | 扫描资产、过滤PSD/线稿、建立索引 | 资产目录 | project_index.json |
+| pdf-storyboard-parser | 解析 PDF 分镜，提取镜号+图+描述 | 分镜稿.pdf | storyboard/shot_XXX/ |
+| shot-mapping-parser | 解析 Excel 香盘表 | shot_mapping.xlsx | shot_mapping.json |
+| shot-config-builder | 关联资产+分镜+配置，构建生成 Prompt | shot_mapping.json + project_index | shot_configs/shot_XXX_config.json |
+| ai-shot-generator | 调用 zencli 执行生成，版本管理 | shot_config.json | output/shot_XXX_vN.png |
+
+## 完整工作流
+
+```
+准备资产 → 解析资产库 → 解析 PDF 分镜 → 解析香盘表 → 构建配置 → 生成镜头
+```
+
+## ZenStudio 工具
+
+- **CLI：** `/usr/local/bin/zencli`（v1.2.2）
+- **模型：** 贝宝pro（316）最常用，支持 8 张输入图片
+- **命令：** `zencli generate image --prompt ... --model 316 --input-images url1,url2,... --poll`
+- **上传：** `zencli upload <file>`
+
 ## 待补充
 
 - Alice 常用的具体项目或场景
