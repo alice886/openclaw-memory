@@ -82,7 +82,7 @@ zencli generate image \
 ```bash
 zencli generate video \
   --prompt "[二维动画风格的动态描述]" \
-  --model "402" \
+  --model "2" \
   --mode "Text" \
   --duration "5" \
   --count "1" \
@@ -91,7 +91,7 @@ zencli generate video \
 ```
 
 **默认值（必须使用）**:
-- 模型：402 zen-03
+- 模型：2 Zen-01-1.5pro
 
 ---
 

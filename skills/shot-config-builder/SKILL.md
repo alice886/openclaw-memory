@@ -60,7 +60,7 @@
   "generation": {
     "image_model": "316",
     "image_resolution": "2K",
-    "video_model": "402",
+    "video_model": "2",
     "video_duration": 5
   }
 }
