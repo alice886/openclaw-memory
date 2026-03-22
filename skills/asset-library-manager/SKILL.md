@@ -3,15 +3,15 @@
 **描述**: 智能资产库管理系统，负责影视项目资产的扫描、过滤、索引、搜索和验证。支持 PSD 过滤、线稿识别、精准匹配和二次确认机制。
 
 **职责范围**:
-- ✅ 资产文件扫描与过滤
+- ✅ 资产文件扫描与过滤（文件名 + 图片内容双重验证）
 - ✅ 智能搜索与精准匹配
 - ✅ 资产索引生成与维护
 - ✅ 项目完整性检查
 - ✅ 上传资产到 ZenStudio 媒资库
 
 **不负责**:
-- ❌ AI 生成任务执行（由 `storyboard-generator` 负责）
-- ❌ 分镜脚本解析（由 `storyboard-generator` 负责）
+- ❌ AI 生成任务执行（由 `ai-shot-generator` 负责）
+- ❌ 分镜脚本解析（由 `pdf-storyboard-parser` 负责）
 
 **触发条件**: 
 - 用户提到"扫描资产"、"查找资产"、"初始化资产库"
@@ -51,10 +51,10 @@
 ```
 
 **执行流程**:
-1. 读取 `asset_rules`（如果存在 `shot_mapping.json`）
-2. 扫描 `assets/` 各子目录
-3. 应用过滤规则（PSD、线稿等）
-4. 可选：使用 `image` 工具验证图片是否上色
+1. 扫描 `assets/` 各子目录（characters/scenes/props/moods）
+2. **Step 1：文件名过滤**（快速，排除 PSD 等明显无效文件）
+3. **Step 2：文件名关键词过滤**（排除含"线稿"、"RR"、"sketch"等关键词的文件）
+4. **Step 3：图片内容分析**（对所有通过 Step 2 的文件，逐张用 `image` 工具验证是否真正上色）
 5. 生成 `project_index.json`
 6. 输出统计报告
 
@@ -65,8 +65,8 @@
 ✅ 有效资产: 45 个
 ❌ 已过滤: 105 个
    - PSD 文件: 60 个
-   - 线稿: 30 个
-   - 其他: 15 个
+   - 文件名过滤: 30 个（线稿/RR/sketch等）
+   - 图片内容过滤: 15 个（内容分析判定为线稿）
 
 📋 资产统计:
    🎭 角色: 12 个
@@ -155,7 +155,7 @@
 ```
 
 **Agent 行为**:
-1. 使用 `message` 工具发送候选图片（`--media` 参数）
+1. 使用 `qqmedia` 标签发送候选图片（绝对路径）
 2. 等待用户回复
 3. 解析用户选择（数字 1-N 或"取消"）
 4. 返回选中的资产路径
@@ -232,7 +232,7 @@
 
 ## 🔍 智能过滤规则
 
-### 1. 文件格式过滤
+### 1. 文件格式过滤（Step 1）
 **排除规则**:
 ```bash
 - *.psd              # Photoshop 源文件
@@ -242,53 +242,76 @@
 - *.blend            # Blender 工程文件
 ```
 
-### 2. 线稿识别
-
-**方法 1：文件名关键词过滤**（快速，优先）
+### 2. 文件名关键词过滤（Step 2）
+**排除包含以下关键词的文件**：
 ```bash
-排除包含以下关键词的文件：
-- 线稿 / lineart / line-art
-- 草图 / sketch / draft
-- 轮廓 / outline
-- 未上色 / uncolored / bw (black-white)
+线稿 / lineart / line-art
+草图 / sketch / draft
+轮廓 / outline / rough
+未上色 / uncolored / bw / black-white
+RR（= Rough Rendering，线稿级渲染）
+上色中 / coloring / 描线
+PSD内含 / PSD内容
 ```
 
-**方法 2：图像内容分析**（备用，慢但准确）
+**特别注意**：
+- `RR` = Rough Rendering = 线稿 ❌ 排除
+- `清稿` = Clean final = 可用 ✅
+- `色稿` = Colored = 可用 ✅
+- `上色` = Colored = 可用 ✅
+- `final` / `v2` / `v3` = 版本号 = 优先用最新版
 
-仅在以下情况触发：
-- 用户明确要求："严格过滤线稿"
-- 文件名不明确（无上述关键词）
-- 初始化时设置 `strict_lineart_check: true`
+### 3. 图片内容分析（Step 3）— 核心过滤
 
-实现方式：
-```javascript
-// 使用 OpenClaw 的 image 工具
-const result = await image({
-  image: "assets/characters/可疑文件.png",
-  prompt: `判断这张图片：
-    1. 是否为线稿（只有黑白线条，无色彩填充）？
-    2. 是否已上色（有颜色、阴影、质感）？
-    
-    回答格式：
-    线稿: 是/否
-    已上色: 是/否
-    置信度: 0-100`
-});
+**触发条件**：
+- 文件通过 Step 1 + Step 2 后
+- **必须对所有用于 AI 生成的角色/场景资产逐张分析**
+- 不得跳过
 
-if (result.includes("线稿: 是") || result.includes("已上色: 否")) {
-  // 排除此文件
-}
+**分析方法**：
+使用 OpenClaw 的 `image` 工具对图片进行内容分析。
+
+**分析 Prompt**：
+```
+分析这张人物设定图，判断其完成度：
+
+1. 线条情况：是否有大量清晰的黑线/深色线条勾勒轮廓？
+2. 色彩情况：是否有除了线稿颜色（黑/深灰）以外的色彩填充？
+3. 阴影情况：是否有明暗对比、立体感、材质质感？
+   - ❌ 无阴影 = 只有线条+纯色平涂
+   - ✅ 有阴影 = 有光影关系、立体感
+4. 质感情况：是否有布料/金属/皮肤等材质的表现？
+
+判断标准（任一满足则排除）：
+- 大量清晰线条 + 无阴影 + 无质感 → 线稿 ❌
+- 大量清晰线条 + 纯色平涂 → 线稿 ❌
+- 大量清晰线条 + 只有双色（双色+白色/单色）→ 线稿 ❌
+
+回答格式：
+线条: 严重/轻微/无
+色彩: 丰富/平淡/单色
+阴影: 强/弱/无
+质感: 强/弱/无
+结论: 上色稿✅ / 线稿❌ / 待确认🟡
+理由: <简要说明>
 ```
 
-**识别特征**:
-- ❌ 线稿：纯黑白、只有线条、无色彩填充、无阴影
-- ✅ 完成稿：有颜色、有阴影、有材质质感、有光影
+**结论判定规则**：
+- 上色稿✅：色彩丰富或平淡但有明显阴影，或有明显质感
+- 线稿❌：大量线条 + 无阴影 + 无质感/纯色平涂
+- 待确认🟡：介于两者之间 → 提交用户判断
 
-### 3. 三视图优先
+**重要提醒**：
+> ⚠️ 赛璐璐平涂风格（有颜色但无阴影）容易被误判为上色稿。
+> 关键判断标准：**有无阴影和立体感**，而非有无颜色。
+> 纯色平涂即便有颜色也属于线稿级别，应排除。
+
+### 4. 三视图优先
 **优先级排序**:
 1. 文件名包含"三视图" / "turnaround" / "character_sheet"
 2. 文件名包含"正侧背" / "front_side_back"
-3. 图像分析确认（可选）
+3. 版本号最高（v3 > v2 > v1）
+4. 图像分析确认为上色稿
 
 **标记方式**:
 在 `project_index.json` 中标记：
@@ -298,10 +321,12 @@ if (result.includes("线稿: 是") || result.includes("已上色: 否")) {
     "characters": {
       "青年刀马": {
         "path": "assets/characters/青年刀马_三视图.png",
-        "type": "turnaround",  // ← 三视图标记
+        "filename": "青年刀马_三视图.png",
+        "type": "turnaround",
         "colored": true,
-        "verified": true,
-        "priority": 1          // ← 最高优先级
+        "image_verified": true,
+        "lineart_filter_passed": true,
+        "priority": 1
       }
     }
   }
@@ -314,12 +339,17 @@ if (result.includes("线稿: 是") || result.includes("已上色: 否")) {
 
 ```json
 {
-  "project_name": "奇幻冒险短剧",
-  "project_path": "/Users/alice/MyFilm",
-  "scan_time": "2026-03-21T21:30:00+08:00",
+  "project_name": "镖人2",
+  "project_path": "/Users/xxx/Desktop/镖人2项目",
+  "scan_time": "2026-03-22T21:20:00+08:00",
   "total_files_scanned": 150,
   "valid_assets": 45,
   "filtered_files": 105,
+  "filter_stats": {
+    "psd_files": 60,
+    "filename_filtered": 30,
+    "lineart_by_image_analysis": 15
+  },
   "assets": {
     "characters": {
       "青年刀马": {
@@ -327,42 +357,17 @@ if (result.includes("线稿: 是") || result.includes("已上色: 否")) {
         "filename": "青年刀马_三视图.png",
         "type": "turnaround",
         "colored": true,
-        "verified": true,
-        "file_size": 2048576,
-        "resolution": "2048x2048",
-        "uploaded": true,
-        "cdn_url": "https://zenvideo-pro.gtimg.com/.../xxx.png",
-        "asset_id": "abc123",
-        "priority": 1
-      },
-      "老年刀马": {
-        "path": "assets/characters/老年刀马_三视图.png",
-        "filename": "老年刀马_三视图.png",
-        "type": "turnaround",
-        "colored": true,
-        "verified": true,
+        "image_verified": true,
+        "lineart_filter_passed": true,
         "uploaded": false,
+        "cdn_url": null,
+        "asset_id": null,
         "priority": 1
       }
     },
-    "scenes": {
-      "竹林": {
-        "path": "assets/scenes/竹林_远景.png",
-        "filename": "竹林_远景.png",
-        "type": "scene",
-        "colored": true,
-        "verified": true,
-        "uploaded": false,
-        "priority": 2
-      }
-    },
+    "scenes": {},
     "props": {},
     "moods": {}
-  },
-  "filter_stats": {
-    "psd_files": 60,
-    "lineart_files": 30,
-    "other_excluded": 15
   }
 }
 ```
@@ -385,199 +390,30 @@ if (result.includes("线稿: 是") || result.includes("已上色: 否")) {
    - 支持绝对路径：`/Users/alice/MyFilm/assets/characters/青年刀马.png`
    - 自动展开 `~`：`~/projects/MyFilm/`
 
-3. **缓存策略**
-   - `project_index.json` 作为缓存，避免重复扫描
-   - 用户可手动刷新：`重新扫描资产库`
-   - 检测文件变更（可选）：对比修改时间
+3. **资产选择优先级**
+   ```
+   ✅ 优先选择（从高到低）：
+   1. 含"清稿" / "色稿" / "上色" / "final"
+   2. 版本号高（v3 > v2 > v1）
+   3. 三视图 > 全身 > 半身 > 特写
+   4. 图片内容分析判定为上色稿
 
-4. **错误处理**
-   - 目录不存在 → 提示用户确认路径
-   - 无有效资产 → 提示检查文件格式和命名
-   - 搜索无结果 → 提供相似建议（Levenshtein 距离）
+   ❌ 一律排除：
+   - 含"线稿"/"RR"/"sketch"/"draft"/"草图"等关键词
+   - PSD/PSB/AI 等源文件
+   - 图片内容分析判定为线稿（无阴影/无质感）
+   - 纯黑白线条稿
+   ```
+
+4. **发送给用户前必须检查**
+   - 每张候选图片都要经过图片内容分析
+   - 不得将线稿发送给用户或用于生成
+   - 如有疑问，标注"🟡 待确认"让用户判断
 
 5. **性能优化**
-   - 扫描阶段：仅文件名过滤（快）
-   - 初始化完成后：可选深度验证（慢）
-   - 图像分析：仅在必要时使用
-
----
-
-## 🔌 对外接口（供其他 Skill 调用）
-
-### 函数 1：搜索资产
-```javascript
-// 输入
-{
-  "query": "青年刀马",
-  "type": "characters",  // 可选
-  "strict": false        // 是否要求完全匹配
-}
-
-// 输出
-{
-  "status": "found" | "multiple" | "not_found",
-  "results": [
-    {
-      "name": "青年刀马",
-      "path": "assets/characters/青年刀马_三视图.png",
-      "cdn_url": "https://...",
-      "asset_id": "abc123",
-      "confidence": 100  // 匹配置信度
-    }
-  ]
-}
-```
-
-### 函数 2：获取资产详情
-```javascript
-// 输入
-{
-  "name": "青年刀马",
-  "type": "characters"
-}
-
-// 输出
-{
-  "path": "assets/characters/青年刀马_三视图.png",
-  "cdn_url": "https://...",
-  "asset_id": "abc123",
-  "type": "turnaround",
-  "colored": true
-}
-```
-
-### 函数 3：批量获取资产
-```javascript
-// 输入
-{
-  "names": ["青年刀马", "竹林", "宝剑"],
-  "types": ["characters", "scenes", "props"]
-}
-
-// 输出
-{
-  "found": [
-    { "name": "青年刀马", "path": "...", ... },
-    { "name": "竹林", "path": "...", ... }
-  ],
-  "missing": ["宝剑"]
-}
-```
-
----
-
-## 📚 辅助脚本
-
-### scripts/scan_assets.sh
-```bash
-#!/bin/bash
-# 扫描资产目录并生成索引
-# 用法: ./scan_assets.sh <项目路径>
-
-PROJECT_PATH="$1"
-ASSET_DIR="$PROJECT_PATH/assets"
-OUTPUT="$PROJECT_PATH/project_index.json"
-
-# 过滤规则
-EXCLUDE_EXT='\.psd$|\.psb$|\.ai$|\.sketch$'
-EXCLUDE_KW='线稿|lineart|sketch|draft|outline|草图'
-
-echo "🔍 扫描资产库: $ASSET_DIR"
-
-# 扫描各类资产
-for category in characters scenes props moods; do
-  echo "📁 扫描 $category..."
-  find "$ASSET_DIR/$category" -type f \
-    \( -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" \) \
-    | grep -Ev "$EXCLUDE_EXT" \
-    | grep -Ev "$EXCLUDE_KW"
-done
-
-# 生成 JSON（简化版，实际由 Agent 生成完整版）
-```
-
-### scripts/search_asset.sh
-（已创建，见前面的代码）
-
-### scripts/upload_assets.sh
-```bash
-#!/bin/bash
-# 批量上传资产到 ZenStudio
-# 用法: ./upload_assets.sh <project_index.json>
-
-INDEX_FILE="$1"
-
-# 读取资产列表并上传
-jq -r '.assets[][] | .path' "$INDEX_FILE" | while read -r asset_path; do
-  echo "📤 上传: $asset_path"
-  
-  # 1. 上传到 COS
-  cdn_url=$(zencli upload "$asset_path" -o json | jq -r '.cdn_url')
-  
-  # 2. 入库媒资
-  asset_id=$(zencli asset create --url "$cdn_url" --project-id <id> -o json | jq -r '.asset_id')
-  
-  echo "✅ CDN URL: $cdn_url"
-  echo "✅ Asset ID: $asset_id"
-done
-```
-
----
-
-## 🎓 最佳实践
-
-### 1. 文件命名规范
-```
-推荐格式：<名称>_<类型>_<版本>.png
-
-✅ 青年刀马_三视图_v2.png
-✅ 老年刀马_半身像_final.png
-✅ 竹林_远景_日间.png
-✅ 宝剑_特写_上色.png
-
-❌ IMG_20240315.png
-❌ 新建文件夹/角色1.png
-❌ 刀马(1)(2)最终版v3真的最终版.png
-```
-
-### 2. 目录结构
-```
-assets/
-├── characters/          # 所有角色放这里
-│   ├── 青年刀马_三视图.png
-│   └── 老年刀马_三视图.png
-├── scenes/              # 所有场景放这里
-│   ├── 竹林_远景.png
-│   └── 城堡_内景.png
-├── props/               # 所有道具放这里
-└── moods/               # 所有氛围图放这里
-
-不要：
-❌ assets/角色/人物/主角/青年/刀马.png  （嵌套太深）
-❌ assets/characters/青年刀马/三视图/final/v2.png  （过度分类）
-```
-
-### 3. 版本管理
-```
-同一资产的多个版本：
-青年刀马_三视图_v1.png
-青年刀马_三视图_v2.png
-青年刀马_三视图_final.png  ← 推荐使用
-
-优先级：
-1. 标记为 "final" 或 "official"
-2. 版本号最高（v3 > v2 > v1）
-3. 修改时间最新
-```
-
-### 4. 定期维护
-```
-建议每周执行：
-1. 重新扫描资产库（刷新索引）
-2. 检查项目完整性
-3. 清理未使用的资产
-4. 备份 project_index.json
-```
+   - Step 1 + Step 2（文件名过滤）：快，批量执行
+   - Step 3（图片内容分析）：慢，逐一执行
+   - 对于已有 `project_index.json` 的资产：只分析新增/修改的文件
 
 ---
 
@@ -587,14 +423,15 @@ assets/
 **可能原因**:
 1. 文件名包含"线稿"等关键词被过滤
 2. 文件格式是 PSD
-3. 文件在错误的目录（如放在 `scenes/` 但应该在 `characters/`）
-4. `project_index.json` 过期，需重新扫描
+3. 图片内容被分析判定为线稿（无阴影/无质感）
+4. 文件在错误的目录
+5. `project_index.json` 过期，需重新扫描
 
 **解决方法**:
 ```
 1. 检查文件名和格式
 2. 运行"重新扫描资产库"
-3. 使用"列出所有资产"查看完整列表
+3. 使用"列出所有资产"查看通过过滤的完整列表
 ```
 
 ### Q2: 如何区分"青年刀马"和"老年刀马"？
@@ -607,57 +444,38 @@ assets/
 ❌ 刀马(青年).png  （括号内的信息可能被忽略）
 ```
 
-### Q3: 图像分析很慢怎么办？
+### Q3: 图片内容分析耗时间怎么办？
 **优化方案**:
-1. 使用规范的文件命名，避免触发图像分析
-2. 在 `asset_rules` 中设置 `strict_lineart_check: false`
-3. 仅在初始化时执行一次深度验证
+1. Step 1 + Step 2 先过滤掉 80% 的无效文件
+2. 只对剩余 20% 执行 Step 3 图片分析
+3. 已完成分析的文件缓存结果到 `project_index.json`，不重复分析
 
 ---
 
 ## 🚀 快速开始
 
-### 1. 准备项目目录
-```bash
-mkdir -p ~/MyFilm/assets/{characters,scenes,props,moods}
+### 1. 初始化资产库
+```
+对 Agent 说：初始化资产库 ~/Desktop/镖人2项目
 ```
 
-### 2. 复制资产文件
-```bash
-# 将你的图片文件复制到对应目录
-cp 角色图/*.png ~/MyFilm/assets/characters/
-cp 场景图/*.png ~/MyFilm/assets/scenes/
-```
-
-### 3. 初始化资产库
-```
-对 Agent 说：初始化资产库 ~/MyFilm
-```
-
-### 4. 搜索资产
+### 2. 搜索资产
 ```
 对 Agent 说：查找青年刀马
 ```
 
-### 5. 上传到云端（可选）
+### 3. 检查完整性
+```
+对 Agent 说：检查项目完整性
+```
+
+### 4. 上传到云端
 ```
 对 Agent 说：上传资产到云端
 ```
 
 ---
 
-## 📦 输出产物
-
-本 Skill 生成以下文件：
-
-1. **project_index.json** - 资产索引（主要输出）
-2. **asset_scan_report.txt** - 扫描报告（可选）
-3. **missing_assets.txt** - 缺失资产列表（如果有）
-
-这些文件会被 `storyboard-generator` skill 读取使用。
-
----
-
-**版本**: 1.0.0  
-**依赖**: zencli, jq, grep, find  
-**协作 Skill**: storyboard-generator
+**版本**: 2.0.0（新增图片内容分析过滤）  
+**依赖**: zencli, jq, grep, find, OpenClaw image 工具  
+**协作 Skill**: ai-shot-generator, shot-config-builder
