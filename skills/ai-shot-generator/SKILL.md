@@ -41,7 +41,8 @@
 - 规则：从香盘表的「场景」字段匹配，如"长江-隋军马船"→匹配「灭陈水战.jpg」
 
 #### C. 分镜图构图参考（必须）
-- 来源：`~/Desktop/镖人2项目/storyboard/shot_XXX/sketch.png`
+- 来源：`~/Desktop/镖人2项目/storyboard/shot_cXXX/cXXX_1_of_N.png`
+- 注意：目录名是 `shot_c310` 不是 `shot_310`，文件名格式是 `c310_1_of_2.png`
 - 规则：作为构图参考图输入给 AI，确保镜头构图与分镜一致
 
 ### Step 3: 构建 Prompt
@@ -126,7 +127,7 @@ zencli generate video \
 **2. 匹配资产**
 - 人设：`~/Desktop/资产/人设定稿/001刀马/BR2_青年刀马_人设设定清稿_rr2.jpg`
 - 场景：`~/Desktop/资产/氛围/氛围/灭陈水战.jpg`
-- 分镜：`~/Desktop/镖人2项目/storyboard/shot_003/sketch.png`（或 shot_004 对应）
+- 分镜：`~/Desktop/镖人2项目/storyboard/shot_c310/c310_1_of_2.png`（多页镜头）
 
 **3. 构建 Prompt**
 ```
