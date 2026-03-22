@@ -1,0 +1,943 @@
+{
+  "project": "镖人2",
+  "created_at": "2026-03-22T22:10:46+08:00",
+  "total_images": 117,
+  "images": [
+    {
+      "key": "杨勇贴身侍卫",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/杨勇贴身侍卫/镖人2-杨勇贴身侍卫-推面.png",
+      "temp_path": "",
+      "name": "镖人2-杨勇贴身侍卫-推面.png",
+      "category": "characters",
+      "score": 30
+    },
+    {
+      "key": "003知世郎",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/003知世郎/知世郎-全身-影.jpg",
+      "temp_path": "",
+      "name": "知世郎-全身-影.jpg",
+      "category": "characters",
+      "score": 90
+    },
+    {
+      "key": "宇文护",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/宇文护/BR2_宇文护_人设设定草案_曹倩雯_.png",
+      "temp_path": "",
+      "name": "BR2_宇文护_人设设定草案_曹倩雯_.png",
+      "category": "characters",
+      "score": 0
+    },
+    {
+      "key": "宇文泰",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/宇文泰/BR2_宇文泰_人设设定草案_曹倩雯_.png",
+      "temp_path": "",
+      "name": "BR2_宇文泰_人设设定草案_曹倩雯_.png",
+      "category": "characters",
+      "score": 0
+    },
+    {
+      "key": "狒狒侍卫长",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/狒狒侍卫长/装老莫人头的盒子.png",
+      "temp_path": "",
+      "name": "装老莫人头的盒子.png",
+      "category": "characters",
+      "score": 0
+    },
+    {
+      "key": "015宇文化及（骁骑卫 摩休勒）",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/015宇文化及（骁骑卫 摩休勒）/镖人-摩休勒-弹弓-色稿.png",
+      "temp_path": "",
+      "name": "镖人-摩休勒-弹弓-色稿.png",
+      "category": "characters",
+      "score": 150
+    },
+    {
+      "key": "青楼花娘",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/青楼花娘/青楼花娘 上色.png",
+      "temp_path": "",
+      "name": "青楼花娘 上色.png",
+      "category": "characters",
+      "score": 140
+    },
+    {
+      "key": "陈国舞姬",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/陈国舞姬/镖人2 陈国舞姬01 色稿.png",
+      "temp_path": "",
+      "name": "镖人2 陈国舞姬01 色稿.png",
+      "category": "characters",
+      "score": 150
+    },
+    {
+      "key": "阿相师兄弟",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/阿相师兄弟/npc和尚2-推面.png",
+      "temp_path": "",
+      "name": "npc和尚2-推面.png",
+      "category": "characters",
+      "score": 30
+    },
+    {
+      "key": "004杨广",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/004杨广/镖人2-道具-杨广太子剑-清稿.png",
+      "temp_path": "",
+      "name": "镖人2-道具-杨广太子剑-清稿.png",
+      "category": "characters",
+      "score": 160
+    },
+    {
+      "key": "023 含冤老兵",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/023 含冤老兵/含冤老者-色稿.png",
+      "temp_path": "",
+      "name": "含冤老者-色稿.png",
+      "category": "characters",
+      "score": 150
+    },
+    {
+      "key": "杨广随从",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/杨广随从/杨广随从-推面.png",
+      "temp_path": "",
+      "name": "杨广随从-推面.png",
+      "category": "characters",
+      "score": 30
+    },
+    {
+      "key": "028元胄",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/028元胄/元胄-色稿.png",
+      "temp_path": "",
+      "name": "元胄-色稿.png",
+      "category": "characters",
+      "score": 150
+    },
+    {
+      "key": "乌鸦",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/乌鸦/乌鸦（借用幻游猎人血鸦）.jpg",
+      "temp_path": "",
+      "name": "乌鸦（借用幻游猎人血鸦）.jpg",
+      "category": "characters",
+      "score": 0
+    },
+    {
+      "key": "陈国守将任忠",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/陈国守将任忠/陈国守将任忠分色.png",
+      "temp_path": "",
+      "name": "陈国守将任忠分色.png",
+      "category": "characters",
+      "score": 0
+    },
+    {
+      "key": "034宇文智及",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/034宇文智及/JPEG/宇文智及-全身-影.jpg",
+      "temp_path": "",
+      "name": "宇文智及-全身-影.jpg",
+      "category": "characters",
+      "score": 90
+    },
+    {
+      "key": "萧皇后",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/萧皇后/镖人2 萧皇后-推面.png",
+      "temp_path": "",
+      "name": "镖人2 萧皇后-推面.png",
+      "category": "characters",
+      "score": 30
+    },
+    {
+      "key": "宇文邕",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/宇文邕/BR2_宇文邕_人设设定草案_曹倩雯_.png",
+      "temp_path": "",
+      "name": "BR2_宇文邕_人设设定草案_曹倩雯_.png",
+      "category": "characters",
+      "score": 0
+    },
+    {
+      "key": "022矮骡子",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/022矮骡子/JPEG/矮骡子-全身-影.jpg",
+      "temp_path": "",
+      "name": "矮骡子-全身-影.jpg",
+      "category": "characters",
+      "score": 90
+    },
+    {
+      "key": "002竖",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/002竖/回忆 竖-全身-影.jpg",
+      "temp_path": "",
+      "name": "回忆 竖-全身-影.jpg",
+      "category": "characters",
+      "score": 90
+    },
+    {
+      "key": "大隋武将",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/大隋武将/隋军武将-清稿.png",
+      "temp_path": "",
+      "name": "隋军武将-清稿.png",
+      "category": "characters",
+      "score": 160
+    },
+    {
+      "key": "右骁骑卫",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/右骁骑卫/右骁骑卫军官-清稿.png",
+      "temp_path": "",
+      "name": "右骁骑卫军官-清稿.png",
+      "category": "characters",
+      "score": 160
+    },
+    {
+      "key": "029班头",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/029班头/班头_色稿.png",
+      "temp_path": "",
+      "name": "班头_色稿.png",
+      "category": "characters",
+      "score": 150
+    },
+    {
+      "key": "007秦叔宝",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/007秦叔宝/秦书宝立绘转面.jpg",
+      "temp_path": "",
+      "name": "秦书宝立绘转面.jpg",
+      "category": "characters",
+      "score": 0
+    },
+    {
+      "key": "025乐四爷",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/025乐四爷/JPEG/乐四爷-全身-影.jpg",
+      "temp_path": "",
+      "name": "乐四爷-全身-影.jpg",
+      "category": "characters",
+      "score": 90
+    },
+    {
+      "key": "青楼主人",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/青楼主人/青楼主人_185.png",
+      "temp_path": "",
+      "name": "青楼主人_185.png",
+      "category": "characters",
+      "score": 0
+    },
+    {
+      "key": "陈国士兵的人头",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/陈国士兵的人头/头颅1.png",
+      "temp_path": "",
+      "name": "头颅1.png",
+      "category": "characters",
+      "score": 0
+    },
+    {
+      "key": "宇文婉姝",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/宇文婉姝/BR2_宇文婉姝_人设色定推面.png",
+      "temp_path": "",
+      "name": "BR2_宇文婉姝_人设色定推面.png",
+      "category": "characters",
+      "score": 30
+    },
+    {
+      "key": "信行大师",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/信行大师/僧衣信行大师-推面.png",
+      "temp_path": "",
+      "name": "僧衣信行大师-推面.png",
+      "category": "characters",
+      "score": 30
+    },
+    {
+      "key": "035宇文化及",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/035宇文化及/JPEG/宇文化及-全身-影.jpg",
+      "temp_path": "",
+      "name": "宇文化及-全身-影.jpg",
+      "category": "characters",
+      "score": 90
+    },
+    {
+      "key": "000道具",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/000道具/御刀-色稿.png",
+      "temp_path": "",
+      "name": "御刀-色稿.png",
+      "category": "characters",
+      "score": 150
+    },
+    {
+      "key": "陈国群臣",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/陈国群臣/镖人2-陈国群臣-推面.png",
+      "temp_path": "",
+      "name": "镖人2-陈国群臣-推面.png",
+      "category": "characters",
+      "score": 30
+    },
+    {
+      "key": "015骁骑卫 摩休勒",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/015骁骑卫 摩休勒/十三骁骑卫-摩休勒-色稿(1).png",
+      "temp_path": "",
+      "name": "十三骁骑卫-摩休勒-色稿(1).png",
+      "category": "characters",
+      "score": 147
+    },
+    {
+      "key": "夜蝠",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/夜蝠/BR2_夜蝠_人设色定推面色版.png",
+      "temp_path": "",
+      "name": "BR2_夜蝠_人设色定推面色版.png",
+      "category": "characters",
+      "score": 30
+    },
+    {
+      "key": "027裴世矩",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/027裴世矩/裴世矩-全身-影.png",
+      "temp_path": "",
+      "name": "裴世矩-全身-影.png",
+      "category": "characters",
+      "score": 90
+    },
+    {
+      "key": "030捕快众",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/030捕快众/捕快众A-E.png",
+      "temp_path": "",
+      "name": "捕快众A-E.png",
+      "category": "characters",
+      "score": 0
+    },
+    {
+      "key": "007莫老",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/007莫老/JPEG/莫老-全身-影.jpg",
+      "temp_path": "",
+      "name": "莫老-全身-影.jpg",
+      "category": "characters",
+      "score": 90
+    },
+    {
+      "key": "014骁骑卫 犼",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/014骁骑卫 犼/镖人2 犼 推面色稿.png",
+      "temp_path": "",
+      "name": "镖人2 犼 推面色稿.png",
+      "category": "characters",
+      "score": 180
+    },
+    {
+      "key": "020 骁骑卫 金倪",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/020 骁骑卫 金倪/金猊推面色稿改(1)(1).png",
+      "temp_path": "",
+      "name": "金猊推面色稿改(1)(1).png",
+      "category": "characters",
+      "score": 177
+    },
+    {
+      "key": "大隋宫卫",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/大隋宫卫/大隋宫卫01_190.png",
+      "temp_path": "",
+      "name": "大隋宫卫01_190.png",
+      "category": "characters",
+      "score": 0
+    },
+    {
+      "key": "005燕子娘",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/005燕子娘/燕子娘-全身-影.jpg",
+      "temp_path": "",
+      "name": "燕子娘-全身-影.jpg",
+      "category": "characters",
+      "score": 90
+    },
+    {
+      "key": "七妹",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/七妹/小七14岁-推面.png",
+      "temp_path": "",
+      "name": "小七14岁-推面.png",
+      "category": "characters",
+      "score": 30
+    },
+    {
+      "key": "031裴行俨",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/031裴行俨/裴行俨-全身-影.png",
+      "temp_path": "",
+      "name": "裴行俨-全身-影.png",
+      "category": "characters",
+      "score": 90
+    },
+    {
+      "key": "012骁骑卫 椒图",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/012骁骑卫 椒图/椒图-推面色稿改.png",
+      "temp_path": "",
+      "name": "椒图-推面色稿改.png",
+      "category": "characters",
+      "score": 180
+    },
+    {
+      "key": "陈叔宝",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/陈叔宝/陈叔宝（陈后主）色稿（无花纹.png",
+      "temp_path": "",
+      "name": "陈叔宝（陈后主）色稿（无花纹.png",
+      "category": "characters",
+      "score": 150
+    },
+    {
+      "key": "076被杀知县",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/076被杀知县/狗官-色稿.png",
+      "temp_path": "",
+      "name": "狗官-色稿.png",
+      "category": "characters",
+      "score": 150
+    },
+    {
+      "key": "077青楼门卫",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/077青楼门卫/青楼门卫 色稿.png",
+      "temp_path": "",
+      "name": "青楼门卫 色稿.png",
+      "category": "characters",
+      "score": 150
+    },
+    {
+      "key": "013莫老",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/013莫老/JPEG/莫老-全身-影.jpg",
+      "temp_path": "",
+      "name": "莫老-全身-影.jpg",
+      "category": "characters",
+      "score": 90
+    },
+    {
+      "key": "阿相",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/阿相/小和尚阿相-推面.png",
+      "temp_path": "",
+      "name": "小和尚阿相-推面.png",
+      "category": "characters",
+      "score": 30
+    },
+    {
+      "key": "尉迟迥",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/尉迟迥/BR2_尉迟迥_人设设定草案_曹倩雯_.png",
+      "temp_path": "",
+      "name": "BR2_尉迟迥_人设设定草案_曹倩雯_.png",
+      "category": "characters",
+      "score": 0
+    },
+    {
+      "key": "李渊",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/李渊/BR2_李渊_人设设定草案_曹倩雯_.png",
+      "temp_path": "",
+      "name": "BR2_李渊_人设设定草案_曹倩雯_.png",
+      "category": "characters",
+      "score": 0
+    },
+    {
+      "key": "大隋敢死队",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/大隋敢死队/镖人2-隋唐敢死队-推面.png",
+      "temp_path": "",
+      "name": "镖人2-隋唐敢死队-推面.png",
+      "category": "characters",
+      "score": 30
+    },
+    {
+      "key": "045高颎",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/045高颎/JPEG/高颎-全身-影.jpg",
+      "temp_path": "",
+      "name": "高颎-全身-影.jpg",
+      "category": "characters",
+      "score": 90
+    },
+    {
+      "key": "046贺若弼",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/046贺若弼/壮年贺若弼-上色.png",
+      "temp_path": "",
+      "name": "壮年贺若弼-上色.png",
+      "category": "characters",
+      "score": 140
+    },
+    {
+      "key": "049黑星",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/049黑星/JPEG/黑星调整 全身-影.jpg",
+      "temp_path": "",
+      "name": "黑星调整 全身-影.jpg",
+      "category": "characters",
+      "score": 90
+    },
+    {
+      "key": "036宇文述",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/036宇文述/宇文述大刀-上色.png",
+      "temp_path": "",
+      "name": "宇文述大刀-上色.png",
+      "category": "characters",
+      "score": 140
+    },
+    {
+      "key": "008谛听",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/008谛听/谛听-全身-骁骑卫-戴面具上色.png",
+      "temp_path": "",
+      "name": "谛听-全身-骁骑卫-戴面具上色.png",
+      "category": "characters",
+      "score": 230
+    },
+    {
+      "key": "075宫廷内官",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/075宫廷内官/镖人-道具-带血敕书.png",
+      "temp_path": "",
+      "name": "镖人-道具-带血敕书.png",
+      "category": "characters",
+      "score": 0
+    },
+    {
+      "key": "056大隋士兵",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/056大隋士兵/大隋士兵-全身-色稿.png",
+      "temp_path": "",
+      "name": "大隋士兵-全身-色稿.png",
+      "category": "characters",
+      "score": 240
+    },
+    {
+      "key": "宇文士及",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/宇文士及/BR2_宇文士及_人设设定草案_曹倩雯_.png",
+      "temp_path": "",
+      "name": "BR2_宇文士及_人设设定草案_曹倩雯_.png",
+      "category": "characters",
+      "score": 0
+    },
+    {
+      "key": "021 骁骑卫 狎鱼",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/021 骁骑卫 狎鱼/镖人2 狎鱼 推面色稿.png",
+      "temp_path": "",
+      "name": "镖人2 狎鱼 推面色稿.png",
+      "category": "characters",
+      "score": 180
+    },
+    {
+      "key": "陈国嫔妃",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/陈国嫔妃/镖人2 陈国嫔妃01 色稿.png",
+      "temp_path": "",
+      "name": "镖人2 陈国嫔妃01 色稿.png",
+      "category": "characters",
+      "score": 150
+    },
+    {
+      "key": "019骁骑卫 斗牛",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/019骁骑卫 斗牛/镖人2 斗牛 推面色稿.png",
+      "temp_path": "",
+      "name": "镖人2 斗牛 推面色稿.png",
+      "category": "characters",
+      "score": 180
+    },
+    {
+      "key": "陈国士兵",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/陈国士兵/镖人-陈国盾牌 色稿.png",
+      "temp_path": "",
+      "name": "镖人-陈国盾牌 色稿.png",
+      "category": "characters",
+      "score": 150
+    },
+    {
+      "key": "宫廷侍女",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/宫廷侍女/镖人2 宫廷侍女-推面.png",
+      "temp_path": "",
+      "name": "镖人2 宫廷侍女-推面.png",
+      "category": "characters",
+      "score": 30
+    },
+    {
+      "key": "009隗知",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/009隗知/隗知-全身-影.jpg",
+      "temp_path": "",
+      "name": "隗知-全身-影.jpg",
+      "category": "characters",
+      "score": 90
+    },
+    {
+      "key": "李世民",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/李世民/BR2_李世民_人设设定草案_曹倩雯_.png",
+      "temp_path": "",
+      "name": "BR2_李世民_人设设定草案_曹倩雯_.png",
+      "category": "characters",
+      "score": 0
+    },
+    {
+      "key": "017 骁骑卫 霸下",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/017 骁骑卫 霸下/霸下 长柄斧色稿.png",
+      "temp_path": "",
+      "name": "霸下 长柄斧色稿.png",
+      "category": "characters",
+      "score": 150
+    },
+    {
+      "key": "010骁骑卫 狰",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/010骁骑卫 狰/狰-推面色稿.png",
+      "temp_path": "",
+      "name": "狰-推面色稿.png",
+      "category": "characters",
+      "score": 180
+    },
+    {
+      "key": "001刀马",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/001刀马/刀马-全身-去帽子斗篷-上色.png",
+      "temp_path": "",
+      "name": "刀马-全身-去帽子斗篷-上色.png",
+      "category": "characters",
+      "score": 230
+    },
+    {
+      "key": "杨坚",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/杨坚/BR2_杨坚_人设设定草案_曹倩雯_.png",
+      "temp_path": "",
+      "name": "BR2_杨坚_人设设定草案_曹倩雯_.png",
+      "category": "characters",
+      "score": 0
+    },
+    {
+      "key": "006小七",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/006小七/小七婴儿版-全身-影.jpg",
+      "temp_path": "",
+      "name": "小七婴儿版-全身-影.jpg",
+      "category": "characters",
+      "score": 90
+    },
+    {
+      "key": "大隋官员",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/大隋官员/镖人2 大隋百官01 色稿.png",
+      "temp_path": "",
+      "name": "镖人2 大隋百官01 色稿.png",
+      "category": "characters",
+      "score": 150
+    },
+    {
+      "key": "032杨素",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/032杨素/镖人-道具-带血敕书-草.png",
+      "temp_path": "",
+      "name": "镖人-道具-带血敕书-草.png",
+      "category": "characters",
+      "score": 0
+    },
+    {
+      "key": "陈国武将",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/陈国武将/陈国武将分色.png",
+      "temp_path": "",
+      "name": "陈国武将分色.png",
+      "category": "characters",
+      "score": 0
+    },
+    {
+      "key": "大隋宦官",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/大隋宦官/大隋宦官-推面.png",
+      "temp_path": "",
+      "name": "大隋宦官-推面.png",
+      "category": "characters",
+      "score": 30
+    },
+    {
+      "key": "026响子帮",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/026响子帮/JPEG/响子帮老大-全身-影.jpg",
+      "temp_path": "",
+      "name": "响子帮老大-全身-影.jpg",
+      "category": "characters",
+      "score": 90
+    },
+    {
+      "key": "飞天仙女",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/飞天仙女/飞天仙女-清稿.png",
+      "temp_path": "",
+      "name": "飞天仙女-清稿.png",
+      "category": "characters",
+      "score": 160
+    },
+    {
+      "key": "024 尉迟敬德",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/024 尉迟敬德/BR2_尉迟敬德_人设设定色稿_曹倩雯_.png",
+      "temp_path": "",
+      "name": "BR2_尉迟敬德_人设设定色稿_曹倩雯_.png",
+      "category": "characters",
+      "score": 150
+    },
+    {
+      "key": "016 骁骑卫 嘲风",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/016 骁骑卫 嘲风/嘲风 偃月刀 色稿.png",
+      "temp_path": "",
+      "name": "嘲风 偃月刀 色稿.png",
+      "category": "characters",
+      "score": 150
+    },
+    {
+      "key": "011骁骑卫 鸱吻",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/011骁骑卫 鸱吻/镖人2 鸱吻 推面色稿.png",
+      "temp_path": "",
+      "name": "镖人2 鸱吻 推面色稿.png",
+      "category": "characters",
+      "score": 180
+    },
+    {
+      "key": "018 骁骑卫 蚣蝮",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/018 骁骑卫 蚣蝮/蚣蝮 画戟 色稿.png",
+      "temp_path": "",
+      "name": "蚣蝮 画戟 色稿.png",
+      "category": "characters",
+      "score": 150
+    },
+    {
+      "key": "东宫卫率",
+      "path": "/Users/wangsha886/Desktop/资产/人设定稿/东宫卫率/镖人2 东宫卫率01 色稿.png",
+      "temp_path": "",
+      "name": "镖人2 东宫卫率01 色稿.png",
+      "category": "characters",
+      "score": 150
+    },
+    {
+      "key": "仁寿宫变",
+      "path": "/Users/wangsha886/Desktop/资产/氛围/氛围/仁寿宫变.jpg",
+      "temp_path": "",
+      "name": "仁寿宫变.jpg",
+      "category": "scenes",
+      "score": 0
+    },
+    {
+      "key": "Z6ZO_H0ZLVWU@`)9A]{G[Y9",
+      "path": "/Users/wangsha886/Desktop/资产/氛围/氛围/Z6ZO_H0ZLVWU@`)9A]{G[Y9.jpg",
+      "temp_path": "",
+      "name": "Z6ZO_H0ZLVWU@`)9A]{G[Y9.jpg",
+      "category": "scenes",
+      "score": 0
+    },
+    {
+      "key": "壁画洞穴",
+      "path": "/Users/wangsha886/Desktop/资产/氛围/氛围/壁画洞穴.png",
+      "temp_path": "",
+      "name": "壁画洞穴.png",
+      "category": "scenes",
+      "score": 0
+    },
+    {
+      "key": "相州寺庭院",
+      "path": "/Users/wangsha886/Desktop/资产/氛围/氛围/相州寺庭院.png",
+      "temp_path": "",
+      "name": "相州寺庭院.png",
+      "category": "scenes",
+      "score": 0
+    },
+    {
+      "key": "相州街道",
+      "path": "/Users/wangsha886/Desktop/资产/氛围/氛围/相州街道.png",
+      "temp_path": "",
+      "name": "相州街道.png",
+      "category": "scenes",
+      "score": 0
+    },
+    {
+      "key": "相州寺大殿议事",
+      "path": "/Users/wangsha886/Desktop/资产/氛围/氛围/相州寺大殿议事.jpg",
+      "temp_path": "",
+      "name": "相州寺大殿议事.jpg",
+      "category": "scenes",
+      "score": 0
+    },
+    {
+      "key": "建康城白土岗氛围",
+      "path": "/Users/wangsha886/Desktop/资产/氛围/氛围/建康城白土岗氛围.png",
+      "temp_path": "",
+      "name": "建康城白土岗氛围.png",
+      "category": "scenes",
+      "score": 0
+    },
+    {
+      "key": "灭陈水战",
+      "path": "/Users/wangsha886/Desktop/资产/氛围/氛围/灭陈水战.jpg",
+      "temp_path": "",
+      "name": "灭陈水战.jpg",
+      "category": "scenes",
+      "score": 0
+    },
+    {
+      "key": "四骑追击",
+      "path": "/Users/wangsha886/Desktop/资产/氛围/氛围/四骑追击.jpg",
+      "temp_path": "",
+      "name": "四骑追击.jpg",
+      "category": "scenes",
+      "score": 0
+    },
+    {
+      "key": "相州寺外冬近",
+      "path": "/Users/wangsha886/Desktop/资产/氛围/氛围/相州寺外冬近.jpg",
+      "temp_path": "",
+      "name": "相州寺外冬近.jpg",
+      "category": "scenes",
+      "score": 0
+    },
+    {
+      "key": "帅帐赐名修改",
+      "path": "/Users/wangsha886/Desktop/资产/氛围/氛围/帅帐赐名修改.jpg",
+      "temp_path": "",
+      "name": "帅帐赐名修改.jpg",
+      "category": "scenes",
+      "score": 0
+    },
+    {
+      "key": "相州寺庙大殿修改",
+      "path": "/Users/wangsha886/Desktop/资产/氛围/氛围/相州寺庙大殿修改.jpg",
+      "temp_path": "",
+      "name": "相州寺庙大殿修改.jpg",
+      "category": "scenes",
+      "score": 0
+    },
+    {
+      "key": "相州寺庙高颖厢房",
+      "path": "/Users/wangsha886/Desktop/资产/氛围/氛围/相州寺庙高颖厢房.jpg",
+      "temp_path": "",
+      "name": "相州寺庙高颖厢房.jpg",
+      "category": "scenes",
+      "score": 0
+    },
+    {
+      "key": "03集峡谷氛围",
+      "path": "/Users/wangsha886/Desktop/资产/氛围/氛围/03集峡谷氛围.png",
+      "temp_path": "",
+      "name": "03集峡谷氛围.png",
+      "category": "scenes",
+      "score": 0
+    },
+    {
+      "key": "相州寺大门口",
+      "path": "/Users/wangsha886/Desktop/资产/氛围/氛围/相州寺大门口.png",
+      "temp_path": "",
+      "name": "相州寺大门口.png",
+      "category": "scenes",
+      "score": 0
+    },
+    {
+      "key": "陈宫大殿室内",
+      "path": "/Users/wangsha886/Desktop/资产/氛围/氛围/陈宫大殿室内.jpg",
+      "temp_path": "",
+      "name": "陈宫大殿室内.jpg",
+      "category": "scenes",
+      "score": 0
+    },
+    {
+      "key": "03集决战驿站氛围",
+      "path": "/Users/wangsha886/Desktop/资产/氛围/氛围/03集决战驿站氛围.png",
+      "temp_path": "",
+      "name": "03集决战驿站氛围.png",
+      "category": "scenes",
+      "score": 0
+    },
+    {
+      "key": "竹林死斗修改",
+      "path": "/Users/wangsha886/Desktop/资产/氛围/氛围/竹林死斗修改.jpg",
+      "temp_path": "",
+      "name": "竹林死斗修改.jpg",
+      "category": "scenes",
+      "score": 0
+    },
+    {
+      "key": "霸下 长柄斧色稿",
+      "path": "/Users/wangsha886/Desktop/资产/道具/十三骁骑尉/霸下 长柄斧色稿.png",
+      "temp_path": "",
+      "name": "霸下 长柄斧色稿.png",
+      "category": "props",
+      "score": 150
+    },
+    {
+      "key": "斗牛 长杆三股叉 色稿(1)",
+      "path": "/Users/wangsha886/Desktop/资产/道具/十三骁骑尉/斗牛 长杆三股叉 色稿(1).png",
+      "temp_path": "",
+      "name": "斗牛 长杆三股叉 色稿(1).png",
+      "category": "props",
+      "score": 147
+    },
+    {
+      "key": "镖人-狰-骑枪-色稿",
+      "path": "/Users/wangsha886/Desktop/资产/道具/十三骁骑尉/镖人-狰-骑枪-色稿.png",
+      "temp_path": "",
+      "name": "镖人-狰-骑枪-色稿.png",
+      "category": "props",
+      "score": 150
+    },
+    {
+      "key": "椒图 双勾刃色稿",
+      "path": "/Users/wangsha886/Desktop/资产/道具/十三骁骑尉/椒图 双勾刃色稿.png",
+      "temp_path": "",
+      "name": "椒图 双勾刃色稿.png",
+      "category": "props",
+      "score": 150
+    },
+    {
+      "key": "镖人-摩休勒-弹弓-色稿",
+      "path": "/Users/wangsha886/Desktop/资产/道具/十三骁骑尉/镖人-摩休勒-弹弓-色稿.png",
+      "temp_path": "",
+      "name": "镖人-摩休勒-弹弓-色稿.png",
+      "category": "props",
+      "score": 150
+    },
+    {
+      "key": "金猊 双手金瓜锤色稿",
+      "path": "/Users/wangsha886/Desktop/资产/道具/十三骁骑尉/金猊 双手金瓜锤色稿.png",
+      "temp_path": "",
+      "name": "金猊 双手金瓜锤色稿.png",
+      "category": "props",
+      "score": 150
+    },
+    {
+      "key": "犼 双手手斧 色稿(1)",
+      "path": "/Users/wangsha886/Desktop/资产/道具/十三骁骑尉/犼 双手手斧 色稿(1).png",
+      "temp_path": "",
+      "name": "犼 双手手斧 色稿(1).png",
+      "category": "props",
+      "score": 147
+    },
+    {
+      "key": "嘲风 偃月刀 色稿",
+      "path": "/Users/wangsha886/Desktop/资产/道具/十三骁骑尉/嘲风 偃月刀 色稿.png",
+      "temp_path": "",
+      "name": "嘲风 偃月刀 色稿.png",
+      "category": "props",
+      "score": 150
+    },
+    {
+      "key": "蚣蝮 画戟 色稿",
+      "path": "/Users/wangsha886/Desktop/资产/道具/十三骁骑尉/蚣蝮 画戟 色稿.png",
+      "temp_path": "",
+      "name": "蚣蝮 画戟 色稿.png",
+      "category": "props",
+      "score": 150
+    },
+    {
+      "key": "狎鱼 环首直刀 色稿",
+      "path": "/Users/wangsha886/Desktop/资产/道具/十三骁骑尉/狎鱼 环首直刀 色稿.png",
+      "temp_path": "",
+      "name": "狎鱼 环首直刀 色稿.png",
+      "category": "props",
+      "score": 150
+    },
+    {
+      "key": "谛听（阿相）双手骨朵 色稿",
+      "path": "/Users/wangsha886/Desktop/资产/道具/十三骁骑尉/谛听（阿相）双手骨朵 色稿.png",
+      "temp_path": "",
+      "name": "谛听（阿相）双手骨朵 色稿.png",
+      "category": "props",
+      "score": 150
+    },
+    {
+      "key": "霸下 牛角弓色稿",
+      "path": "/Users/wangsha886/Desktop/资产/道具/十三骁骑尉/霸下 牛角弓色稿.png",
+      "temp_path": "",
+      "name": "霸下 牛角弓色稿.png",
+      "category": "props",
+      "score": 150
+    },
+    {
+      "key": "镖人-摩休勒-马槊-色稿",
+      "path": "/Users/wangsha886/Desktop/资产/道具/十三骁骑尉/镖人-摩休勒-马槊-色稿.png",
+      "temp_path": "",
+      "name": "镖人-摩休勒-马槊-色稿.png",
+      "category": "props",
+      "score": 150
+    },
+    {
+      "key": "镖人-狰-三矢弓-色稿-改",
+      "path": "/Users/wangsha886/Desktop/资产/道具/十三骁骑尉/镖人-狰-三矢弓-色稿-改.png",
+      "temp_path": "",
+      "name": "镖人-狰-三矢弓-色稿-改.png",
+      "category": "props",
+      "score": 150
+    },
+    {
+      "key": "鸱吻（女） 西域弯刀 色稿",
+      "path": "/Users/wangsha886/Desktop/资产/道具/十三骁骑尉/鸱吻（女） 西域弯刀 色稿.png",
+      "temp_path": "",
+      "name": "鸱吻（女） 西域弯刀 色稿.png",
+      "category": "props",
+      "score": 150
+    },
+    {
+      "key": "镖人-狰-三矢弓-色稿",
+      "path": "/Users/wangsha886/Desktop/资产/道具/十三骁骑尉/废案/镖人-狰-三矢弓-色稿.png",
+      "temp_path": "",
+      "name": "镖人-狰-三矢弓-色稿.png",
+      "category": "props",
+      "score": 150
+    }
+  ]
+}

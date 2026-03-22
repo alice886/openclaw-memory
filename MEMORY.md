@@ -83,6 +83,37 @@
 - **命令：** `zencli generate image --prompt ... --model 316 --input-images url1,url2,... --poll`
 - **上传：** `zencli upload <file>`
 
+## 镖人2项目完整资产结构
+
+### 筛选脚本（已建立）
+- `~/Desktop/镖人2工作流/镖人2_筛选核心资产.command` — 智能精选核心资产（977→117张）
+- `~/Desktop/镖人2工作流/镖人2_资产批量打标签.command` — 全量扫描脚本
+- `~/Desktop/小马儿记忆备份.command` — 双击自动 commit 记忆
+
+### 资产路径
+- 人设定稿：`~/Desktop/资产/人设定稿/`（89个角色目录）
+- 场景氛围：`~/Desktop/资产/氛围/氛围/`（18张）
+- 道具：`~/Desktop/资产/道具/`
+- 香盘表：`~/Desktop/资产/香盘表/`
+
+### 关键区分（重要！）
+- 青年刀马：`001刀马/BR2_青年刀马_人设设定清稿_rr2.jpg`
+- 刀马17岁 ≠ 青年刀马
+- 陈国武将 ≠ 陈国士兵
+- 线稿标记：RR/sketch/线稿/draft/草图/轮廓 → ❌排除
+- 定稿标记：清稿/色稿/上色/final/v2/v3/三视图 → ✅
+
+### AI 生成（ZenStudio）
+- 工具：zencli（v1.2.2）
+- 模型：贝宝pro (316)
+- 上传：`zencli upload <file>`
+- 生成：`zencli generate image --prompt ... --model 316 --input-images url1,url2 --poll`
+
+### 批量分析状态
+- 2026-03-22：建立资产语义标签流程
+- 117个核心资产批量分析中（子agent运行中）
+- 输出：`~/.openclaw/workspace/temp_assets/project_index.json`
+
 ## 待补充
 
 - Alice 常用的具体项目或场景
