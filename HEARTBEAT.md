@@ -1,5 +1,11 @@
 # HEARTBEAT.md
 
-# 保持此文件为空（或只有注释）来跳过心跳 API 调用。
+## 镖人2主动检查
 
-# 当你想让 agent 定期检查某些内容时，在下面添加任务。
+- 检查 output/ 最新生成结果，记录到 semantics_index.json
+- 检查 git 状态，未 push 的 commit 超过3个则自动合并
+
+## 系统健康
+
+- 检查磁盘空间，低于 20% 告警
+- 检查 GitHub backup 有无失败记录
