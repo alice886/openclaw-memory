@@ -1,0 +1,10 @@
+# Temp assets - do not backup
+temp_assets/
+storyboard/
+storyboard_c/
+corrected/
+corrected_flipped/
+*.jpg
+*.png
+*.py
+!memory/*.md
