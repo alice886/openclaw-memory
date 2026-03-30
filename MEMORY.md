@@ -14,7 +14,7 @@
 
 ## 镖人2项目
 
-- 项目：~/Desktop/镖人2项目/ | 资产：~/Desktop/资产/
+- 项目：/Users/wangsha886/alice文件/镖人2工作流/镖人2项目/ | 资产：~/Desktop/资产/
 - 核心区分：青年刀马定稿 ✅ / 刀马17岁 ❌ / 陈国武将 ≠ 陈国士兵 / 线稿(RR/sketch) ❌ 定稿(清稿/final/v2) ✅
 - ZenStudio：zencli v1.2.2，模型贝宝pro(316)，上传用 zencli upload，生成用 --poll
 
